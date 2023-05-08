@@ -32,6 +32,7 @@ jobs:
       fail-fast: false
       matrix:
         target: ["${{ github.event.client_payload.target }}"]
+        need-ssh: ["${{ github.event.client_payload.ssh-connection }}"]
         
     steps:
     - name: Checkout
@@ -249,9 +250,7 @@ jobs:
         df -hT
 
     - name: SSH connection to Actions
-      uses: notfound945/debugger-action@master
-
-      if: contains(github.event.action, 'ssh')
+      if: ${{ matrix.need-ssh }}
 
     - name: Compile the firmware
       id: compile
