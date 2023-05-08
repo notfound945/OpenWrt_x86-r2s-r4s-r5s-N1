@@ -20,6 +20,9 @@ on:
         description: 'parameter'
         required: false
         default: ''
+      ssh-connection:
+        description: 'Whether to establish an SSH connection'
+        default: false
 
 env:
   REPO_TOKEN: ${{ secrets.REPO_TOKEN }}
