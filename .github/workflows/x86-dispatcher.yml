@@ -17,7 +17,7 @@ on:
   workflow_dispatch:
     inputs:
       param:
-        description: 'parameter'
+        description: 'Parameter insert build artifact file name'
         required: false
         default: ''
       ssh-connection:
