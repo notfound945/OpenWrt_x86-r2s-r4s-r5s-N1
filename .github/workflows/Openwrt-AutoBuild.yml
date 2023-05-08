@@ -250,7 +250,7 @@ jobs:
         df -hT
 
     - name: SSH connection to Actions
-      if: ${{ matrix.need-ssh }}
+      if: ${{matrix.need-ssh}}
 
     - name: Compile the firmware
       id: compile
